@@ -7,6 +7,8 @@ public abstract class Funcionario
     private String nome;
     protected BigDecimal salarioAnual;
 
+
+
     protected Funcionario(String nome, BigDecimal salarioAnual) {
         this.nome = nome;
         this.salarioAnual = salarioAnual;
