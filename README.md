@@ -4,5 +4,5 @@ branch master <br>
 exercício proposto, criação de um test que detecte as violações do LSP
 
 branch respeitaLSP <br>
- desafio pessoal, concertar violações do LSP
+ desafio pessoal, consertar violações do LSP
 
