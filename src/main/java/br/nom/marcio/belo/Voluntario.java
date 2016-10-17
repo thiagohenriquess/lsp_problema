@@ -2,16 +2,10 @@ package br.nom.marcio.belo;
 
 import java.math.BigDecimal;
 
-public class Voluntario  extends Funcionario
+public class Voluntario  extends SerHumano
 {
-
-    protected Voluntario(String nome, BigDecimal salarioAnual) {
-        super(nome, BigDecimal.ZERO);
+	protected Voluntario(String nome) {
+        super(nome);        
     }
-
-    @Override
-    public void reajustar(BigDecimal taxa)
-    {
-        throw new IllegalStateException("nao implementado");
-    }
+ 
 }

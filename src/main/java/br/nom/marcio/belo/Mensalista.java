@@ -17,7 +17,8 @@ public class Mensalista extends Funcionario
                 , 2, BigDecimal.ROUND_HALF_UP).add( BigDecimal.ONE) );
     }
 
-    private void validarTaxa(BigDecimal taxa)
+    @Override
+    protected void validarTaxa(BigDecimal taxa)
     {
         if( isTaxaForaIntervalo(taxa) )
         {
@@ -25,7 +26,8 @@ public class Mensalista extends Funcionario
         }
     }
 
-    private boolean isTaxaForaIntervalo(BigDecimal taxa) {
+    @Override
+    protected boolean isTaxaForaIntervalo(BigDecimal taxa) {
         return taxa.compareTo( BigDecimal.ZERO) <= 0 || taxa.compareTo( BigDecimal.TEN) > 0;
     }
 

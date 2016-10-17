@@ -2,20 +2,17 @@ package br.nom.marcio.belo;
 
 import java.math.BigDecimal;
 
-public abstract class Funcionario
+public abstract class Funcionario extends SerHumano
 {
-    private String nome;
     protected BigDecimal salarioAnual;
 
-
-
-    protected Funcionario(String nome, BigDecimal salarioAnual) {
-        this.nome = nome;
-        this.salarioAnual = salarioAnual;
+    protected Funcionario(String nome){
+    	super(nome);
     }
 
-    public String getNome() {
-        return nome;
+    protected Funcionario(String nome, BigDecimal salarioAnual) {
+        super(nome);
+        this.salarioAnual = salarioAnual;
     }
 
     public BigDecimal getSalarioAnual()
@@ -28,4 +25,9 @@ public abstract class Funcionario
      * @param taxa valor maior que 0 e menor ou igual a 10.
      */
     public abstract void reajustar( BigDecimal taxa);
+    
+    protected abstract boolean isTaxaForaIntervalo(BigDecimal taxa);
+    
+    protected abstract void validarTaxa(BigDecimal taxa); 
+	
 }

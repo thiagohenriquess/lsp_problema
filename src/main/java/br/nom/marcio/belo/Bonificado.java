@@ -19,14 +19,15 @@ public class Bonificado extends Funcionario
                 .add( BigDecimal.ONE) );
     }
 
-    private void validarTaxa(BigDecimal taxa)
+    protected void validarTaxa(BigDecimal taxa)
     {
         if (isTaxaForaIntervalo(taxa)) {
             throw new IllegalArgumentException("Taxa deve estar no limite entre 0 e 5");
         }
     }
 
-    private boolean isTaxaForaIntervalo(BigDecimal taxa)
+    @Override
+	protected boolean isTaxaForaIntervalo(BigDecimal taxa)
     {
         return taxa.compareTo( BigDecimal.ZERO) <= 0 || taxa.compareTo(CINCO) > 0;
     }
