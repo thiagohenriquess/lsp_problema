@@ -49,4 +49,18 @@ public class FuncionarioTest
         Funcionario funcionario = new Voluntario("Leo", new BigDecimal("1000000"));
         assertEquals( new BigDecimal("0.00"), funcionario.getSalarioAnual());
     }
+    
+    @Test
+    public void testVoluntarioisFuncionario()
+    {
+    	try{
+    		Funcionario voluntario = new Voluntario("Sem Nome",new BigDecimal("1000.00"));
+	    	voluntario.reajustar(new BigDecimal("50.00"));
+    	}
+    	catch(IllegalStateException e)
+    	{
+    		String expectedMessage = "nao implementado";
+    		assertEquals(expectedMessage, e.getMessage());
+    	}
+    }
 }

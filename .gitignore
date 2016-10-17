@@ -1,2 +1,6 @@
 .idea/
 lsp_problema.iml
+/target/
+.classpath
+.project
+.settings/
